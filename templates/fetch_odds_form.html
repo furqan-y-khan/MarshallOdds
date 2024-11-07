@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Odds Data</title>
+</head>
+<body>
+    <h1>Fetch Odds Data</h1>
+    <form action="/fetch-odds" method="post">
+        <!-- Sport Dropdown -->
+        <label for="sport">Select Sport:</label>
+        <select name="sport" id="sport">
+            {% for value, label in sports_options %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <!-- Region Dropdown -->
+        <label for="region">Select Region:</label>
+        <select name="region" id="region">
+            {% for value, label in region_options %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <!-- Markets Dropdown -->
+        <label for="markets">Select Market Type:</label>
+        <select name="markets" id="markets">
+            {% for value, label in market_options %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <!-- Odds Format Dropdown -->
+        <label for="odds_format">Select Odds Format:</label>
+        <select name="odds_format" id="odds_format">
+            {% for value, label in odds_format_options %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <!-- Date Format Dropdown -->
+        <label for="date_format">Select Date Format:</label>
+        <select name="date_format" id="date_format">
+            {% for value, label in date_format_options %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Fetch and Download CSV</button>
+    </form>
+</body>
+</html>
